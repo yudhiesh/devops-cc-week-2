@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  web1:
+    build: ./quote_gen
+    container_name: quote-gen-container
+    ports:
+      - "5000:5000"
+  web2:
+    build: ./quote_disp
+    container_name: quote-disp-container
+    ports:
+      - "5001:5001"
+    depends_on:
+      - web1
