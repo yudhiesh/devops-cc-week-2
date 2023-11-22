@@ -23,7 +23,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          python -m pip install -r requirements.txt
+          python -m pip install -r quote_gen/requirements.txt
       - name: Run tests
         run: |
           pytest --junitxml=pytest.xml | tee pytest-coverage.txt
