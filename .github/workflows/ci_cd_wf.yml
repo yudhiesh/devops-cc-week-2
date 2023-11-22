@@ -26,9 +26,9 @@ jobs:
           python -m pip install -r quote_gen/requirements.txt
       - name: Run tests
         run: |
-          python -m pytest --junitxml=pytest.xml quote_gen/tests | tee pytest-coverage.txt
+          python -m pytest --junitxml=quote_gen/pytest.xml quote_gen/tests | tee quote_gen/pytest-coverage.txt
       - name: Pytest coverage comment
         uses: MishaKav/pytest-coverage-comment@main
         with:
-          pytest-coverage-path: ./pytest-coverage.txt
-          junitxml-path: ./pytest.xml
+          pytest-coverage-path: quote_gen/pytest-coverage.txt
+          junitxml-path: quote_gen/pytest.xml
